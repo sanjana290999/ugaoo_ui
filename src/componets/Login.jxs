@@ -1,0 +1,37 @@
+import React from "react";
+function HomePage() {
+  return (
+    <div className="flex item-center justify-center h-50vh mt-10">
+      <form className=" bg-white p-8 shadow-2xl rounde">
+        <div>
+          <h1 className="  text-red-500"></h1>
+        </div>
+        <div>
+          <label>
+            Email:
+            <input
+              className="m-5 p-2 border-black"
+              type="text"
+              name="email"
+              id="email"
+              placeholder="enter your email"
+            />
+          </label>
+          <div>
+            <label>
+              Password
+              <input
+                className="m-2 p-2 border-black"
+                type="text"
+                name="Password"
+                id="password"
+                placeholder="enter password"
+              />
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}
+export default HomePage;
