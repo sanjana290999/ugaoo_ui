@@ -1,57 +1,38 @@
 import React from "react";
-export default function PlantCollectionData({
-  data,
-  showAllButton,
-  PlantCollection,
-  PlantCollection1,
-  PlantCollection2,
-}) {
+
+export default function PlantCollectionData({ data, showAllButton }) {
   return (
     <div>
-      <div>
-        {/* <p
-          className=" text-4xl font-medium ml-60 mt-10
-            "
-        >
-          {name}
-        </p> */}
-        <div className="flex justify-evenly mt-10">
-          {data &&
-            data.map((element) => (
-              <div className="w-72  flex flex-col">
-                <img
-                  className="object-contain w-[100%]"
-                  src={element.img}
-                  alt="plant images"
-                />
-                <p className=" flex justify-start mt-4 text-xl font-bold">
-                  {element.name}
-                </p>
-                <p className=" flex justify-start mt-4 text-lg  text-green-600">
-                  &#x20B9;<s>{element.slasherPrice}</s>&nbsp; {element.price}{" "}
-                  &#x20B9;
-                </p>
-
-                <button
-                  className=" bg-green-700 py-2 text-white font-medium   mt-5"
-                  type="button"
-                >
-                  {" "}
-                  VIEW PRODUCT
-                </button>
-              </div>
-            ))}
-          {/*  */}
-        </div>
+      <div className="flex flex-wrap justify-center md:justify-evenly mt-10">
+        {data &&
+          data.map((element, index) => (
+            <div key={index} className="w-full sm:w-72 flex flex-col m-4">
+              <img
+                className="object-contain w-full"
+                src={element.img}
+                alt="plant"
+              />
+              <p className="mt-4 text-xl font-bold">{element.name}</p>
+              <p className="mt-4 text-lg text-green-600">
+                &#x20B9;<s>{element.slasherPrice}</s>&nbsp; {element.price}{" "}
+                &#x20B9;
+              </p>
+              <button
+                className="bg-green-700 py-2 text-white font-medium mt-5"
+                type="button"
+              >
+                VIEW PRODUCT
+              </button>
+            </div>
+          ))}
       </div>
       {showAllButton && (
-        <div className="flex items-center  justify-center">
+        <div className="flex items-center justify-center mt-10">
           <button
-            className=" bg-green-700 px-28 py-2 text-white font-medium  mt-10 "
+            className="bg-green-700 px-10 md:px-28 py-2 text-white font-medium"
             type="button"
           >
-            {" "}
-            VIEW All
+            VIEW ALL
           </button>
         </div>
       )}
